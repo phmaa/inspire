@@ -1,0 +1,257 @@
+/**
+* Template Name: Scaffold - v2.0.0
+* Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #009cea;
+}
+
+a:hover {
+  color: #1eb4ff;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 72px;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 15px 0;
+  background: #fff;
+}
+
+#header.header-scrolled {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#header .navbar h1 {
+  font-size: 28px;
+  margin: 0;
+  padding: 6px 0;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar h1 a, .navbar h1 a:hover {
+  color: #576971;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #header .logo h1 {
+    font-size: 28px;
+    padding: 8px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  background-image: url("../img/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
+  margin-top: 70px;
+  padding: 60px 0;
+}
+
+#hero h1 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #364146;
+}
+
+#hero h2 {
+  color: #576971;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+#btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 3px;
+  transition: 0.5s;
+  color: #fff;
+  background: #009cea;
+}
+
+#btn-get-started:hover {
+  background: #008bd1;
+  color: #fff;
+}
+
+#hero .hero-img {
+  text-align: center;
+}
+
+#hero .hero-img img {
+  width: 70%;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #hero h2 {
+    font-size: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about {
+  padding: 0;
+  margin-top: 40px;
+}
+
+.about .container {
+  background-color: #f7f8f9;
+  padding: 60px 50px;
+}
+
+@media (max-width: 992px) {
+  .about .container {
+    padding: 30px;
+  }
+}
+
+.about .content h3 {
+  font-weight: 400;
+  font-size: 32px;
+  color: #364146;
+  font-family: "Poppins", sans-serif;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-bottom: 10px;
+}
+
+.about .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #28a745;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Main /Quote page
+--------------------------------------------------------------*/
+.team {
+  background: url("../img/quote-bg.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 60px 0;
+  position: relative;
+}
+
+.team::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 9;
+}
+
+.team .container {
+  position: relative;
+  z-index: 10;
+}
+
+#team .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#team h2, .team h2 p {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f7f8f9;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  font-family: "Poppins", sans-serif;
+  color: #627680;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}

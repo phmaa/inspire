@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{# child template for about.html, but need to bind the route on appy.py #}
+
+{% block title %}About{% endblock %}
+
+
+{% block nav_index %} {% endblock %}
+{% block nav_about %}class="active" {% endblock %}
+{% block nav_team %} {% endblock %}
+
+{% block content %} 
+ 
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+
+  <div class="container">
+    <h1>Admin login</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+  </div>
+
+</section><!-- End About Section -->
+
+  
+  {% endblock %}
+

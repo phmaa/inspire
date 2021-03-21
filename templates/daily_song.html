@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Daily Song</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+  <body>
+    <div class="container">
+      <h2>Add a New Song</h2>
+       
+    {% if daily_song %}
+    <p><strong>{{ daily_song.title }}</strong> successfully created! Add another below.</p>
+  
+    {% endif %}
+    <!-- The form action and method correspond to a Flask route-->
+    <form action='/api/add_songs' method="POST">
+
+        <label for='title'>Title</label>
+        <input type="text" id="title" name="title" size="20">
+
+        <label for="artist">Artist</label>
+        <input type="text" id="artist" name="artist" size="20">
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre" size="20">
+
+        <input type="submit" value="Add">
+      
+    </form>
+
+    <br>
+    <p><a href="/team_space">Log Out</a></p>
+
+<!-- https://github.com/pallets/flask-sqlalchemy/blob/master/examples/hello/hello.py -->
+    <hr>
+
+    <h2>Songs Table</h2>
+    <form action="/api/show_all" method="POST">
+      <p><input type="submit" value="Display" ></p>
+      <table class="songs table" id="mytable">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for song in all_songs %}
+        <tr>
+          <td>{{ song.id }}</td>
+          <td>{{ song.title }}</td>
+          <td>{{ song.artist }}</td>
+          <td>{{ song.genre }}</td>
+          <td>
+              <form action="./delete" method="POST">
+                <input type="hidden" value="{{ song.title }}" name="title">
+                <input type="submit" value="Delete">
+              </form>
+            
+        </td>      
+        </tr>
+        {% endfor %}
+        </tbody>  
+      </table>    
+     
+    </form>  
+   
+    </div>
+</body>
+</html>

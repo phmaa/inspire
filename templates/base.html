@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- define simple HTML skeleton document -->
+<!-- https://jinja.palletsprojects.com/en/2.11.x/templates/ -->
+<html lang="en">
+  <head> 
+    {% block head %}
+    <title>{% block title %} {% endblock %} - Final Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icofont.min.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="static/js/index.js"></script>
+     {% endblock %}
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top">
+      {% block header %} {% endblock %} 
+      <nav class="navbar navbar-expand-lg"> 
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a class="navbar-brand" href='/'>InspireMe</a></h1>
+      </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse text-right" id="myNavbar">
+        <ul class="navbar-nav ml-auto" style="margin-inline-end: 5rem;" >
+          <!-- dynamically generate active page, use href='/' to redirect to index.html -->
+          <li {% block nav_index %} {% endblock %} class="nav-item"><a class="nav-link" href="/" style="color: #576971">Home</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: #576971;">About</a>
+            <div class="dropdown-menu">
+              <a {% block nav_about %} {% endblock %} href="/team_space" class="nav-link">Team Space</a>
+              <a {% block nav_team %} {% endblock %} href="/about" class="nav-link">About Us</a>
+            </div>
+          </li>
+        </ul>  
+      </div> 
+      </nav>  
+     
+    </header>
+        <!-- /.Navbar -->
+
+
+    <!-- dynamically genewrate the content of each page -->
+        <div id="content">{% block content %} {% endblock %}</div>
+
+    </body>
+</html>

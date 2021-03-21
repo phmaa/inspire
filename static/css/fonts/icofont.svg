@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="icofont" horiz-adv-x="1000" >
+<font-face font-family="IcoFont" font-weight="400" font-style="Regular" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="check-circled" horiz-adv-x="1000" unicode="&#xeed7;" d="M687 551c-3 3-9 3-13-1-83-88-166-176-249-264-4-4-10-4-13 0l-89 88c-3 4-9 4-13 0l-53-53c-4-4-4-10 0-14l158-158c3-3 9-3 13 1 105 111 210 223 316 335 3 4 3 9-1 13-18 18-37 35-56 53z m-187 237c-242 0-437-196-437-438s195-438 437-438 438 196 438 438-196 438-438 438z m0-807c-203 0-369 166-369 369s166 369 369 369c204 0 369-165 369-369s-165-369-369-369z" />
+</font>
+</defs>
+</svg>
