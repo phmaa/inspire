@@ -1,6 +1,6 @@
 from flask import request, render_template, session, abort, redirect, url_for
 from models import Song, create_song, User, create_user, Results
-from app import app, db
+from app import app, db, pages
 import json
 import util
 
@@ -77,3 +77,9 @@ def delete_song():
     return redirect(url_for('add_songs'))
   else:
     render_template('daily_song.html')
+
+@app.route('/<path:path>/')
+def page(path):
+  # 'path' is the filename of a page, without the extension
+  page = pages.get_or_404(path)
+  return render_template('page.html', page=page)
