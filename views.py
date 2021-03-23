@@ -15,15 +15,15 @@ def index():
 def login():
   error = None
   if request.method == 'POST':
-    if ( ( request.form['password'] == 'admin1' and request.form['username'] == 'admin1') or 
+    if ( ( request.form['password'] == 'admin1' and request.form['username'] == 'admin1') or
     (request.form['password'] == 'admin2' and request.form['username'] == 'admin2' ) ):
       session['logged_in'] = True
       return render_template('/daily_song.html')
-    
+
     else:
       error = 'Unauthorized user.'
       session['logged_in'] = True
-      
+
       return render_template('team_space.html', error=error)
   else:
     return render_template('team_space.html')
@@ -45,18 +45,18 @@ def show_all():
   all_songs = Song.query.order_by(Song.id.desc()).all()
   db.session.commit()
   return render_template('daily_song.html', all_songs=all_songs)
-    
+
 
 # function to query data
 @app.route('/daily_song')
-def show_songs():  
+def show_songs():
   all_songs = Song.query.order_by(Song.id.desc()).all()
   return render_template('daily_song.html', all_songs=all_songs)
-  
+
 
 @app.route('/api/add_songs', methods=['POST', 'GET'])
 def add_songs():
-  if request.method == 'POST':    
+  if request.method == 'POST':
     song_title = request.form.get('title')
     song_artist = request.form.get('artist')
     song_genre = request.form.get('genre')
@@ -68,9 +68,9 @@ def add_songs():
 # https://www.codementor.io/@garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
 # delete entry
 @app.route('/api/delete', methods=['POST'])
-def delete_song(): 
+def delete_song():
   title=request.form['title']
-  if request.method== 'POST': 
+  if request.method== 'POST':
     song = Song.query.filter_by(title=title).first()
     db.session.delete(song)
     db.session.commit()
