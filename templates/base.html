@@ -34,6 +34,7 @@
         <ul class="navbar-nav ml-auto" style="margin-inline-end: 5rem;" >
           <!-- dynamically generate active page, use href='/' to redirect to index.html -->
           <li {% block nav_index %} {% endblock %} class="nav-item"><a class="nav-link" href="/" style="color: #576971">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://phmaa.github.io/my-app/" style="color: #576971">Portfolio</a></li>
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: #576971;">About</a>
             <div class="dropdown-menu">
               <a {% block nav_about %} {% endblock %} href="/team_space" class="nav-link">Team Space</a>
