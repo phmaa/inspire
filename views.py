@@ -1,6 +1,6 @@
 from flask import request, render_template, session, abort, redirect, url_for
 from models import Song, create_song, User, create_user, Results
-from app import app, db, pages
+from app import app, db
 import json
 import util
 

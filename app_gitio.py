@@ -1,3 +1,5 @@
+# https://stevenloria.com/hosting-static-flask-sites-on-github-pages/
+
 import sys, os
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
